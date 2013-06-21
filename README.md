@@ -31,8 +31,8 @@ asusfanctrld
   Thank you Michal Kottman and prikolchik for your amazing work!
 
 # WHY
-  Well I feel that the fans hit their predefined "builtin" thresholds too early 
-  and then turn of shortly after. This repeatedly is distracting me from my work.
+  I feel that the fans hit their predefined "builtin" thresholds too early 
+  and then turn off shortly after. This is distracting me from my work.
 
 # HOW
   Please read the forum posts linked above to fully understand how this script works
@@ -57,7 +57,7 @@ asusfanctrld
  WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING
 
 # DETAILS
-  - Make sure to run this with root permissions
+  - Make sure to run this with root credentials (sudo).
   - Make sure that you have acpi_call kernel module loaded
   - Script executes `\_SB.PCI0.LPCB.EC0.ST98 0x45' ACPI call to set
   the fanspeed to different levels depending on temperature
