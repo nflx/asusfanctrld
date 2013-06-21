@@ -1,7 +1,10 @@
 asusfanctrld
 ============
 
- LICENSE
+# WHAT
+  Highly experimental fan control for my ASUS UX32VD based on acpi_call module.
+
+# LICENSE
   asusfanctrld copyright (c) 2013 Emil Lind
 
     This file is part of asusfanctrld.
@@ -19,23 +22,18 @@ asusfanctrld
     You should have received a copy of the GNU General Public License
     along with asusfanctrld.  If not, see <http://www.gnu.org/licenses/>.
 
- WHAT
-  Highly experimental fan control for my ASUS UX32VD based on acpi_call module.
-
- CREDITS
-
+# CREDITS
   Based on Michal Kottman's acpi_call module: https://github.com/mkottman/acpi_call/
-
   Based on prikolchik's amazing work from this post:
   http://forum.notebookreview.com/asus/705656-fan-control-asus-prime-ux31-ux31a-ux32a-ux32vd.html
 
   Thank you Michal Kottman and prikolchik for your amazing work!
 
- WHY
+# WHY
   Well I feel that the fans hit their predefined "builtin" thresholds too early 
   and then turn of shortly after. This repeatedly is distracting me from my work.
 
- HOW
+# HOW
   Please read the forum posts linked above to fully understand how this script works
   and why this approach is not advised and could DAMAGE YOUR COMPUTER.
   With that said, in short it uses acpi_call debug module to interface and send
@@ -57,7 +55,7 @@ asusfanctrld
 
  WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING
 
- DETAILS
+# DETAILS
   Make sure to run this with root permissions
   Make sure that you have acpi_call kernel module loaded
   Script executes `\_SB.PCI0.LPCB.EC0.ST98 0x45' ACPI call to set
@@ -75,16 +73,16 @@ asusfanctrld
 
   On Ubuntu 13.04 that is done by placing the pmhelper in /etc/pm/sleep.d/
 
- INSTALL
+# INSTALL
   1. Make sure you have a Asus Zenbook UX32VD
-        sudo dmidecode |egrep -i 'asus|ux32vd'
-            Version: UX32VD.213
-            Manufacturer: ASUSTeK COMPUTER INC.
-            Product Name: UX32VD
-            SKU Number: ASUS-NotebookSKU
-            Manufacturer: ASUSTeK COMPUTER INC.
-            Product Name: UX32VD
-            Manufacturer: ASUSTeK COMPUTER INC.
+    sudo dmidecode |egrep -i 'asus|ux32vd'
+        Version: UX32VD.213
+        Manufacturer: ASUSTeK COMPUTER INC.
+        Product Name: UX32VD
+        SKU Number: ASUS-NotebookSKU
+        Manufacturer: ASUSTeK COMPUTER INC.
+        Product Name: UX32VD
+        Manufacturer: ASUSTeK COMPUTER INC.
   2. Note that I have only tried this on one UX32VD with bios 213.
   3. Install acpi_call module so that it loads automatically at bootup.
   4. Read the code and understand it (read the readme).
