@@ -24,6 +24,7 @@ asusfanctrld
 
 # CREDITS
   Based on Michal Kottman's acpi_call module: https://github.com/mkottman/acpi_call/
+
   Based on prikolchik's amazing work from this post:
   http://forum.notebookreview.com/asus/705656-fan-control-asus-prime-ux31-ux31a-ux32a-ux32vd.html
 
@@ -56,22 +57,23 @@ asusfanctrld
  WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING
 
 # DETAILS
-  Make sure to run this with root permissions
-  Make sure that you have acpi_call kernel module loaded
-  Script executes `\_SB.PCI0.LPCB.EC0.ST98 0x45' ACPI call to set
+  - Make sure to run this with root permissions
+  - Make sure that you have acpi_call kernel module loaded
+  - Script executes `\_SB.PCI0.LPCB.EC0.ST98 0x45' ACPI call to set
   the fanspeed to different levels depending on temperature
-  It responds to SIGUSR1 and SIGUSR2 for releasing and taking
+  - It responds to SIGUSR1 and SIGUSR2 for releasing and taking
   control from the otherwise firmware builtin control routine (auto).
+
   Example, releasing control to bios/fw would be:
-  sudo kill -SIGUSR2 <pidof asusfanctrld.sh>
+    sudo kill -SIGUSR2 <pidof asusfanctrld.sh>
 
-  Before the computer is put to sleep/suspend mode, control must be
+  - Before the computer is put to sleep/suspend mode, control must be
   released first. That is what asusfanctrlpmhelper.sh is for.
-
-  WARNING! BUG: That script might for now contain something that
-  prevents my computer from entering sleep mode.
-
   On Ubuntu 13.04 that is done by placing the pmhelper in /etc/pm/sleep.d/
+
+# ISSUES
+  **WARNING! BUG: The asusfanctrlpmhelper script might for now contain something
+  that prevents my computer from entering sleep mode. **
 
 # INSTALL
   1. Make sure you have a Asus Zenbook UX32VD
